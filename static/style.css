@@ -1,0 +1,47 @@
+:root {
+    --primary-color: #2a2a72;
+    --secondary-color: #009ffd;
+    --accent-color: #ff0076;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+  }
+
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(
+        rgba(42, 42, 114, 0.9),
+        rgba(0, 159, 253, 0.8)
+      ),
+      url("https://source.unsplash.com/random/1920x1080/?code") center/cover;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  .skill-badge {
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+  }
+
+  .project-card {
+    transition: transform 0.3s ease;
+    border-radius: 15px !important;
+    overflow: hidden;
+  }
+
+  .floating-img {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }

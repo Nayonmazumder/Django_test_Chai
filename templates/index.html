@@ -1,280 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevPort - Creative Developer Portfolio</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+{% extends "layout.html" %} {% block inner %}
 
-    <style>
-      :root {
-        --primary-color: #2a2a72;
-        --secondary-color: #009ffd;
-        --accent-color: #ff0076;
-      }
-
-      body {
-        font-family: "Poppins", sans-serif;
-        background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-      }
-
-      .hero-section {
-        height: 100vh;
-        background: linear-gradient(
-            rgba(42, 42, 114, 0.9),
-            rgba(0, 159, 253, 0.8)
-          ),
-          url("https://source.unsplash.com/random/1920x1080/?code") center/cover;
-        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-      }
-
-      .skill-badge {
-        transition: all 0.3s ease;
-        border: 2px solid var(--primary-color);
-      }
-
-      .project-card {
-        transition: transform 0.3s ease;
-        border-radius: 15px !important;
-        overflow: hidden;
-      }
-
-      .floating-img {
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-    </style>
-  </head>
-  <body data-bs-spy="scroll" data-bs-target="#navbar-example">
-    <!-- Navigation -->
-    <nav
-      id="navbar-example"
-      class="navbar navbar-expand-lg navbar-dark fixed-top"
-      style="background: rgba(42, 42, 114, 0.95)"
+<!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center">
+  <div class="container text-white text-center">
+    <h1 class="display-3 mb-4">
+      Turning Ideas Into<br /><span style="color: var(--secondary-color)"
+        >Digital Reality</span
+      >
+    </h1>
+    <p class="lead mb-4">Full Stack Developer & UI/UX Enthusiast</p>
+    <a
+      href="#contact"
+      class="btn btn-lg btn-outline-light px-5 py-3"
+      style="border-radius: 30px"
+      >Let's Connect</a
     >
-      <div class="container">
-        <a class="navbar-brand" href="#" style="font-weight: 700"
-          >DEV<span style="color: var(--secondary-color)">PORT</span></a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#skills">Skills</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section d-flex align-items-center">
-      <div class="container text-white text-center">
-        <h1 class="display-3 mb-4">
-          Turning Ideas Into<br /><span style="color: var(--secondary-color)"
-            >Digital Reality</span
-          >
-        </h1>
-        <p class="lead mb-4">Full Stack Developer & UI/UX Enthusiast</p>
-        <a
-          href="#contact"
-          class="btn btn-lg btn-outline-light px-5 py-3"
-          style="border-radius: 30px"
-          >Let's Connect</a
-        >
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-5" style="background: white">
-      <div class="container py-5">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <img
-              src="https://source.unsplash.com/random/600x600/?developer"
-              alt="Profile"
-              class="img-fluid floating-img rounded-circle shadow-lg"
-              style="border: 5px solid var(--primary-color)"
-            />
-          </div>
-          <div class="col-md-6 mt-4 mt-md-0">
-            <h2 class="mb-4">
-              About <span style="color: var(--secondary-color)">Me</span>
-            </h2>
-            <p class="lead">
-              Passionate developer with 5+ years of experience in creating
-              digital solutions that matter. Specializing in web development and
-              user experience design.
+<!-- Projects Section -->
+<section id="projects" class="py-5">
+  <div class="container py-5">
+    <h2 class="text-center mb-5">
+      Featured <span style="color: var(--secondary-color)">Projects</span>
+    </h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card project-card h-100">
+          <img
+            src="https://source.unsplash.com/random/400x300/?app"
+            class="card-img-top"
+            alt="Project"
+          />
+          <div class="card-body">
+            <h5 class="card-title">E-Commerce Platform</h5>
+            <p class="card-text">
+              Full-stack shopping platform with React and Node.js
             </p>
-            <div class="mt-4">
-              <a href="#" class="btn btn-primary px-4 py-2 me-2">Download CV</a>
-              <a href="#contact" class="btn btn-outline-primary px-4 py-2"
-                >Hire Me</a
-              >
-            </div>
+            <div class="badge bg-primary me-2">React</div>
+            <div class="badge bg-success">Node.js</div>
           </div>
         </div>
       </div>
-    </section>
+      <!-- Add more project cards -->
+    </div>
+  </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5" style="background: #f8f9fa">
-      <div class="container py-5">
-        <h2 class="text-center mb-5">
-          Technical <span style="color: var(--secondary-color)">Skills</span>
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card h-100 border-0 shadow-sm skill-badge">
-              <div class="card-body text-center">
-                <i
-                  class="fas fa-code fa-3x mb-3"
-                  style="color: var(--primary-color)"
-                ></i>
-                <h5>Frontend Development</h5>
-                <p>HTML5, CSS3, JavaScript<br />React, Vue, Angular</p>
-              </div>
-            </div>
-          </div>
-          <!-- Add similar skill cards -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-5">
-      <div class="container py-5">
-        <h2 class="text-center mb-5">
-          Featured <span style="color: var(--secondary-color)">Projects</span>
-        </h2>
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card project-card h-100">
-              <img
-                src="https://source.unsplash.com/random/400x300/?app"
-                class="card-img-top"
-                alt="Project"
-              />
-              <div class="card-body">
-                <h5 class="card-title">E-Commerce Platform</h5>
-                <p class="card-text">
-                  Full-stack shopping platform with React and Node.js
-                </p>
-                <div class="badge bg-primary me-2">React</div>
-                <div class="badge bg-success">Node.js</div>
-              </div>
-            </div>
-          </div>
-          <!-- Add more project cards -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5" style="background: var(--primary-color)">
-      <div class="container py-5 text-white">
-        <h2 class="text-center mb-5">
-          Get In <span style="color: var(--secondary-color)">Touch</span>
-        </h2>
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <form>
-              <div class="mb-4">
-                <input
-                  type="text"
-                  class="form-control form-control-lg"
-                  placeholder="Name"
-                  style="border-radius: 30px"
-                />
-              </div>
-              <div class="mb-4">
-                <input
-                  type="email"
-                  class="form-control form-control-lg"
-                  placeholder="Email"
-                  style="border-radius: 30px"
-                />
-              </div>
-              <div class="mb-4">
-                <textarea
-                  class="form-control form-control-lg"
-                  rows="5"
-                  placeholder="Message"
-                  style="border-radius: 20px"
-                ></textarea>
-              </div>
-              <div class="d-grid">
-                <button
-                  class="btn btn-outline-light btn-lg"
-                  type="submit"
-                  style="border-radius: 30px"
-                >
-                  Send Message
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center py-4" style="background: #1a1a1a; color: white">
-      <div class="container">
-        <div class="mb-3">
-          <a href="#" class="text-white mx-3"
-            ><i class="fab fa-github fa-2x"></i
-          ></a>
-          <a href="#" class="text-white mx-3"
-            ><i class="fab fa-linkedin fa-2x"></i
-          ></a>
-          <a href="#" class="text-white mx-3"
-            ><i class="fab fa-twitter fa-2x"></i
-          ></a>
-        </div>
-        <p>&copy; 2023 DevPort. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+{% endblock %}
